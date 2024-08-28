@@ -12,9 +12,9 @@ def get_length():
         length = int(requested_length)
 
 #test for secure password length
-        validation = False if length < 10 else True
+        validation = False if length < 14 else True
         if validation == False :
-            print("Input is not valid, please pick more than 10 for safety.")
+            print("A 14 character password will take a hacker more than a million years to crack! Give them a hard time and increase your choice.")
             get_length()
         else : 
             print("Great, here is you password: ")
@@ -27,6 +27,4 @@ def get_length():
         get_length()
 
 get_length()
-
-
 
