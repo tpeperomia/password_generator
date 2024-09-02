@@ -20,6 +20,9 @@ def get_length():
             print("Great, here is you password: ")
             options = list(string.ascii_letters + string.digits + string.punctuation)
             password = ''.join(secrets.choice(options) for i in range(length))
+
+#test gened password is valid (not single type)
+                        
             print(password)
 
     except : 

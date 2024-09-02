@@ -1,6 +1,7 @@
 #	Imported modules - using random for python tutor - change!
 import string
 import random
+import bcrypt
 
 #	UI to get length
 requested_length = input("How many characters do you need? ")
@@ -88,5 +89,32 @@ while True:
 		break
 
 print(f'Here is your password: {password}')
+
+
+def hash(password) :
+	'''
+		Function to salt and hash generate password
+		:para password: Generated password 
+		:return hashed_password: Hashed password decoded 
+	'''
+	b_password = password.encode('utf-8')
+	salt = bcrypt.gensalt()
+	hashed_password = bcrypt.hashpw(b_password, salt)
+	return hashed_password.decode('utf-8')
+
+
+#	Check to hash or not
+to_hash = input("Do you want to hash that password for safe storage? Y/N ")
+
+if to_hash == "Y" :
+	print(hash(password))
+elif to_hash == "N" : 
+	print("Store it safe then!")
+else :
+	new_to_hash = input("Not sure what you mean, please select Y or N: ")
+	if new_to_hash == "Y" :
+		print(hash(password))
+	else : 
+		print("Store it safe then!")
 
 
