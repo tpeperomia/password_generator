@@ -106,13 +106,13 @@ def hash(password) :
 #	Check to hash or not
 to_hash = input("Do you want to hash that password for safe storage? Y/N ")
 
-if to_hash == "Y" :
+if to_hash.lower() == "y" :
 	print(hash(password))
-elif to_hash == "N" : 
+elif to_hash.lower() == "n" : 
 	print("Store it safe then!")
 else :
 	new_to_hash = input("Not sure what you mean, please select Y or N: ")
-	if new_to_hash == "Y" :
+	if new_to_hash.lower() == "y" :
 		print(hash(password))
 	else : 
 		print("Store it safe then!")
