@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <form method="POST">
+        <label for="length">How many characters do you need?</label>
+        <input type="text" id="length" name="length" required>
+        <br>
+        <label for="to_hash">Do you want to hash the password for safe storage? (Y/N)</label>
+        <input type="text" id="to_hash" name="to_hash" required>
+        <br>
+        <button type="submit">Generate Password</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

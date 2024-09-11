@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Result</title>
+</head>
+<body>
+    <h1>Password Result</h1>
+    <p>Generated Password: <strong>{{ password }}</strong></p>
+    {% if hashed_password %}
+        <p>Hashed Password: <strong>{{ hashed_password }}</strong></p>
+    {% else %}
+        <p>The password was not hashed.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Generate another password</a>
+</body>
+</html>
+
