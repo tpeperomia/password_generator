@@ -70,7 +70,8 @@ def index():
             password = gen_pass(valid_length)
             password = test_set(password)
             hashed_password = None
-            if to_hash == 'Y':
+            hash_or_not = to_hash.lower()
+            if hash_or_not == 'y':
                 hashed_password = hash_password(password)
             return render_template('result.html', password=password, hashed_password=hashed_password)
 

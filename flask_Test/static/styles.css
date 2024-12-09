@@ -1,10 +1,39 @@
+body {
+	background-color: black;
+}
+
 h1 {
 	font-family: "Roboto Mono", monospace;
 	font-optical-sizing: auto;
  	font-weight: 100;
   	font-style: normal;
+  	color: palegreen;
 }
 
-body {
-	background-color: blueviolet;
+label {
+	font-family: "Roboto Mono", monospace;
+	font-optical-sizing: auto;
+ 	font-weight: 100;
+  	font-style: normal;
+  	color: palegreen;
+  	line-height: 2 ;
 }
+
+a {
+	padding-top: 4%;
+}
+
+.box {
+	text-align: center;
+	border-style: solid;
+	border-color: palegreen;
+	padding: 15%;
+	margin: 10%;
+}
+
+.generate {
+	margin-top: 3%; 
+	padding: 1%;
+}
+
+
