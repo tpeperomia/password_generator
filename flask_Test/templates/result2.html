@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+    <title>Password Result</title>
+</head>
+<body>
+    <div class="box">
+        <h1>Password Result</h1>
+        <label>Generated Password: <strong>{{ password }}</strong></label>
+        <br>
+        {% if hashed_password %}
+            <label>Hashed Password: <strong>{{ hashed_password }}</strong></label>
+        {% elif ip %}
+            <label>Nice, but I know where you live</label>
+            <br>
+            <label><strong>{{ ip }}</strong></label>
+        {% else %}
+            <label>The password was not hashed.</label>
+        {% endif %}
+        <br>
+        <a href="{{ url_for('index') }}">Generate another password</a>
+    </div>
+</body>
+</html>
+
