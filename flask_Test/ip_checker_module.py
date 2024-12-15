@@ -74,6 +74,8 @@ def index():
             password = test_set(password, length)
             hashed_password = None
             hash_or_not = to_hash.lower()
+            the_ip = None
+            visitor_city = None
 
             if hash_or_not == 'y':
                 hashed_password = hash_password(password)
