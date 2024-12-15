@@ -67,14 +67,12 @@ def index():
         length = request.form.get('length')
         to_hash = request.form.get('to_hash')
         get_ip = request.remote_addr or '127.0.01' #Easter egg, if not y/n get IP
-        location = geocoder.ip(the_ip)
 
         valid_length = get_length(length)
         if valid_length:
             password = gen_pass(valid_length)
             password = test_set(password, length)
             hashed_password = None
-            the_ip = None
             hash_or_not = to_hash.lower()
 
             if hash_or_not == 'y':
@@ -83,8 +81,10 @@ def index():
                 hashed_password = None
             else:
                 the_ip = get_ip
+
+                location = geocoder.ip(the_ip)
             
-            return render_template('result2.html', password=password, hashed_password=hashed_password, ip=ip)
+            return render_template('result2.html', password=password, hashed_password=hashed_password, the_ip=the_ip, location=location)
 
         return render_template('index.html', error="Invalid length. Please choose a number >= 14.")
 
