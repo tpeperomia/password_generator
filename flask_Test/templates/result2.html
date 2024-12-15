@@ -13,10 +13,12 @@
         <br>
         {% if hashed_password %}
             <label>Hashed Password: <strong>{{ hashed_password }}</strong></label>
-        {% elif ip %}
+        {% elif the_ip %}
             <label>Nice, but I know where you live</label>
             <br>
             <label><strong>{{ ip }}</strong></label>
+            <br>
+            <label><strong>{{ location }}</strong></label>
         {% else %}
             <label>The password was not hashed.</label>
         {% endif %}

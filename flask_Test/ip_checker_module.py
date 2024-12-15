@@ -31,7 +31,7 @@ def gen_pass(length):
     '''
     return ''.join(random.choice(options) for _ in range(length))
 
-def test_set(password):
+def test_set(password, length):
     '''
         Function to test strength of password
             :param password: password to test
@@ -67,13 +67,14 @@ def index():
         length = request.form.get('length')
         to_hash = request.form.get('to_hash')
         get_ip = request.remote_addr or '127.0.01' #Easter egg, if not y/n get IP
+        location = geocoder.ip(the_ip)
 
         valid_length = get_length(length)
         if valid_length:
             password = gen_pass(valid_length)
-            password = test_set(password)
+            password = test_set(password, length)
             hashed_password = None
-            ip = None
+            the_ip = None
             hash_or_not = to_hash.lower()
 
             if hash_or_not == 'y':
@@ -81,7 +82,7 @@ def index():
             elif hash_or_not == 'n':
                 hashed_password = None
             else:
-                ip = get_ip
+                the_ip = get_ip
             
             return render_template('result2.html', password=password, hashed_password=hashed_password, ip=ip)
 
