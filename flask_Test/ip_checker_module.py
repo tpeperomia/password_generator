@@ -83,8 +83,9 @@ def index():
                 the_ip = get_ip
 
                 location = geocoder.ip(the_ip)
+                visitor_city = location.city
             
-            return render_template('result2.html', password=password, hashed_password=hashed_password, the_ip=the_ip, location=location)
+            return render_template('result2.html', password=password, hashed_password=hashed_password, the_ip=the_ip, visitor_city=visitor_city)
 
         return render_template('index.html', error="Invalid length. Please choose a number >= 14.")
 
