@@ -16,7 +16,7 @@ def get_length(requested_length):
     '''
     try:
         length = int(requested_length)
-        if length >= 14:
+        if length >= 14 and length < 24:
             return length
         else:
             return None  # Invalid length
@@ -89,7 +89,7 @@ def index():
             
             return render_template('result2.html', password=password, hashed_password=hashed_password, the_ip=the_ip, visitor_city=visitor_city)
 
-        return render_template('index.html', error="Invalid length. Please choose a number >= 14.")
+        return render_template('index.html', error="Invalid length. Please choose a number more than 14 but less than 24.")
 
     return render_template('index.html')
 
