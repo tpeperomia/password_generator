@@ -17,10 +17,9 @@ secrets – For cryptographically secure password generation
 
 ### 📦 Installation:
 ``` bash
-git clone https://github.com/yourusername/random-password-generator.git  
-cd random-password-generator  
-pip install -r requirements.txt  
-python app.py  
+git clone https://github.com/tpeperomia/password_generator
+cd random-password-generator/flask_Test/
+python ip_checker_module.py
 ```
 
 ### 🌐 Usage:
